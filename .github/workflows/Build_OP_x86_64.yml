@@ -69,7 +69,8 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: 主题
+    - name: 添加主题
+      working-directory: ./openwrt
       run: |
         mkdir package/openwrt-packages
         git clone https://github.com/Kinodi/luci-theme-atmaterial.git package/openwrt-packages
