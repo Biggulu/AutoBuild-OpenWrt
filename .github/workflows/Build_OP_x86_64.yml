@@ -70,11 +70,10 @@ jobs:
         ./scripts/feeds install -a
 
     - name: 添加主题
-      working-directory: ./openwrt
+      working-directory: ./openwrt/package
       run: |
-        mkdir package/openwrt-packages
-        git clone https://github.com/Kinodi/luci-theme-atmaterial.git package/openwrt-packages
-        git clone https://github.com/rosywrt/luci-theme-rosy.git package/openwrt-packages
+        git clone https://github.com/Kinodi/luci-theme-atmaterial.git openwrt-packages/luci-theme-atmaterial
+        git clone https://github.com/rosywrt/luci-theme-rosy.git openwrt-packages/luci-theme-rosy
 
     - name: Configuration Customization - Build_x86_64
       env:
